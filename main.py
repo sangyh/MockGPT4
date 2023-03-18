@@ -5,7 +5,7 @@ from typing import Optional
 import openai
 from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv(Path("/Users/sangyhanumasagar/Desktop/Side Projects/Langchain/MockGPT4/chat-langchain/config/.env"))
+load_dotenv(Path("config/.env"))
 import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 

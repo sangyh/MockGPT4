@@ -13,13 +13,13 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
 )
 
+SystemMessagePrompt = "You are ChatGPT, a large language model trained by OpenAI to have friendly conversations with humans."
 prompt = ChatPromptTemplate.from_messages([
-    SystemMessagePromptTemplate.from_template("The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know."),
+    SystemMessagePromptTemplate.from_template(SystemMessagePrompt),
     MessagesPlaceholder(variable_name="history"),
     HumanMessagePromptTemplate.from_template("{input}")
 ])
 
-llm = ChatOpenAI(temperature=0, model='gpt-4')
 
 memory = ConversationBufferMemory(return_messages=True)
 
